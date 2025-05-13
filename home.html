@@ -141,5 +141,27 @@
         </div>
       </footer>
     </div>
+    <!-- JavaScript for basic interactions -->
+    <script>
+      // Toggle mobile navigation
+      document.getElementById('navToggle').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+      });
+      
+      // Toggle calm mode
+      document.getElementById('calmModeToggle').addEventListener('change', function() {
+        document.documentElement.classList.toggle('calm-mode');
+        localStorage.setItem('calmMode', this.checked);
+      });
+      
+      // Check for saved calm mode preference
+      if (localStorage.getItem('calmMode') === 'true') {
+        document.getElementById('calmModeToggle').checked = true;
+        document.documentElement.classList.add('calm-mode');
+      }
+    </script>
+
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   </body>
    </html>
